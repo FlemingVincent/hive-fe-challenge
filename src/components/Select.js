@@ -58,7 +58,12 @@ export default function Select({
 	return (
 		<div className={cn("min-w-[180px] relative", className)} ref={selectRef}>
 			<button
-				className="flex flex-row h-10 w-full max-w-full items-center justify-between rounded-md border bg-white px-3 py-2"
+				className={cn(
+					"flex flex-row h-10 w-full max-w-full items-center justify-between rounded-md border bg-white px-3 py-2",
+					isOpen
+						? "border-neutral-600 transition-colors duration-200 ease-in-out"
+						: "border-neutral-200 duration-200 ease-in-out",
+				)}
 				onClick={toggleSelect}
 			>
 				<p className="text-sm truncate">
@@ -91,7 +96,7 @@ export default function Select({
 					)}
 					{options.map((option, index) => (
 						<button
-							className="relative flex w-full max-w-full items-center rounded-sm h-10 py-1.5 pl-8 pr-2 hover:bg-neutral-100 transition-colors"
+							className="relative flex w-full max-w-full items-center rounded-sm h-10 py-1.5 pl-8 pr-2 hover:bg-neutral-100 transition-colors duration-200 ease-in-out"
 							key={index}
 							onClick={() => handleOptionClick(option)}
 						>
