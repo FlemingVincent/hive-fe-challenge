@@ -83,7 +83,7 @@ export default function Select({
 				/>
 			</button>
 			{isOpen && (
-				<div className="absolute w-full max-w-full max-h-[162px] top-12 z-50 rounded-md border shadow-md bg-white overflow-y-auto">
+				<div className="absolute w-full max-w-full max-h-[162px] top-12 z-50 rounded-md border shadow-md bg-white overflow-y-auto p-1">
 					{multiSelect && (
 						<button
 							className="w-full h-10 py-1.5 pl-8 pr-2"
@@ -96,7 +96,7 @@ export default function Select({
 					)}
 					{options.map((option, index) => (
 						<button
-							className="relative flex w-full max-w-full items-center rounded-sm h-10 py-1.5 pl-8 pr-2 hover:bg-neutral-100 transition-colors duration-200 ease-in-out"
+							className="relative flex w-full max-w-full items-center rounded-md h-10 py-1.5 pl-8 pr-2 hover:bg-neutral-100 transition-colors duration-200 ease-in-out"
 							key={index}
 							onClick={() => handleOptionClick(option)}
 						>
