@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# HiveAi Frontend Engineer Challenge
+
+## Objective
+
+Using React or vanilla (plain) Javascript, build a reusable dropdown menu component. Please
+do not use a pre-built dropdown from a component library. We expect you to build this from
+scratch.
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository:
 
 ```bash
-npm run dev
-# or
+git clone <>
+```
+
+Install dependencies:
+
+```bash
+yarn install
+```
+
+Run the development server:
+
+```bash
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Requirements
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Design and Interface
 
-## Learn More
+- [x] A user should be able to open and close the dropdown menu.
+- [x] The component must support a single selected option or multiple selected options.
+      Please demonstrate both use cases separately.
+- [x] A user should be able to select and deselect all options at once.
+- [x] The selected option or options must be visible when the dropdown is closed.
 
-To learn more about Next.js, take a look at the following resources:
+Notes:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- You are encouraged to include any additional features that you believe are semantically or aesthetically crucial to a dropdown component
+- Your component does not need to look identical to the designs above.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### API (via Component Props)
 
-## Deploy on Vercel
+- [x] The component should support both single select and multi select.
+- [x] The component should have a flexible API, making it reusable across different parts of
+      one or more applications. Consider it part of a component library.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Performance
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [x] The component should render large lists efficiently.
+- [x] The component should not perform excessive computations.
+
+### Readability
+
+- [x] The code should be readable and a fellow developer should be able to dive right into
+      your code.
+
+## After You Are Done
+
+- [x] Please email your recruiter with either a zip file of your project folder or a github link to the project directory
+- [x] Don’t forget to include instructions on how to run your project
+- [x] Please DO NOT include a node_modules directory as part of your submission.
