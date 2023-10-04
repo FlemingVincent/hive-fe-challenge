@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-import { Check } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
 
 import { cn } from "@/utils";
 
@@ -58,7 +58,7 @@ export default function Select({
 	return (
 		<div className={cn("min-w-[180px] relative", className)} ref={selectRef}>
 			<button
-				className="flex h-10 w-full max-w-full items-center justify-between rounded-md border bg-white px-3 py-2"
+				className="flex flex-row h-10 w-full max-w-full items-center justify-between rounded-md border bg-white px-3 py-2"
 				onClick={toggleSelect}
 			>
 				<p className="text-sm truncate">
@@ -68,6 +68,14 @@ export default function Select({
 						<span className="opacity-50">{label}</span>
 					)}
 				</p>
+				<ChevronDown
+					className={cn(
+						"h-4 w-4 flex-shrink-0",
+						isOpen
+							? "transform rotate-180 transition-transform duration-200 ease-in-out"
+							: "transition-transform duration-200 ease-in-out",
+					)}
+				/>
 			</button>
 			{isOpen && (
 				<div className="absolute w-full max-w-full max-h-[162px] top-12 z-50 rounded-md border shadow-md bg-white overflow-y-auto">
