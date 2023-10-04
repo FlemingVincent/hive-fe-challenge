@@ -11,7 +11,7 @@ scratch.
 Clone the repository:
 
 ```bash
-git clone <>
+git clone https://github.com/FlemingVincent/hive-fe-challenge.git
 ```
 
 Install dependencies:
