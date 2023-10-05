@@ -24,7 +24,24 @@ export function Select({ children, className, multiSelect, handleSelect }) {
 		handleSelect(updatedItems);
 	};
 
-	const handleControl = () => {};
+	const handleControl = () => {
+		let updatedItems;
+
+		if (selectedItems.length > 0) {
+			updatedItems = [];
+		} else {
+			const allNestedChildren = React.Children.toArray(children).flatMap(
+				(child) => React.Children.toArray(child.props?.children || []),
+			);
+
+			updatedItems = allNestedChildren
+				.filter((nestedChild) => nestedChild.props && nestedChild.props.value)
+				.map((nestedChild) => nestedChild.props.value);
+		}
+
+		setSelectedItems(updatedItems);
+		handleSelect(updatedItems);
+	};
 
 	const handleClickOutside = (event) => {
 		if (selectRef.current && !selectRef.current.contains(event.target)) {
@@ -50,6 +67,7 @@ export function Select({ children, className, multiSelect, handleSelect }) {
 					selectedItems,
 					toggleSelect,
 					handleItemClick,
+					handleControl,
 					multiSelect,
 				}),
 			)}

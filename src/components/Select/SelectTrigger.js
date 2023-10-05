@@ -1,4 +1,7 @@
 import React from "react";
+
+import { ChevronsUpDown } from "lucide-react";
+
 import { cn } from "@/utils";
 
 export function SelectTrigger({
@@ -20,6 +23,7 @@ export function SelectTrigger({
 				isOpen,
 				selectedItems,
 			})}
+			<ChevronsUpDown className="w-4 h-4 flex-shrink-0" />
 		</button>
 	);
 }

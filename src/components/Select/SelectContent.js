@@ -7,6 +7,7 @@ export function SelectContent({
 	isOpen,
 	selectedItems,
 	handleItemClick,
+	handleControl,
 	multiSelect,
 }) {
 	if (!isOpen) return null;
@@ -22,6 +23,7 @@ export function SelectContent({
 				React.cloneElement(child, {
 					selectedItems,
 					handleItemClick,
+					handleControl,
 					multiSelect,
 				}),
 			)}
