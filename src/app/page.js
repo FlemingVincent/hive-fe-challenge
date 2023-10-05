@@ -1,26 +1,55 @@
 "use client";
 
-import Select from "@/components/Select";
+import { Label } from "@/components/Label";
+import {
+	Select,
+	SelectContent,
+	SelectLabel,
+	SelectTrigger,
+	SelectValue,
+	SelectItem,
+	SelectControl,
+} from "@/components/Select";
 
 export default function Home() {
 	return (
-		<main className="h-[100vh] flex flex-row items-center justify-center gap-x-4">
+		<main className="h-[100vh] flex flex-row gap-x-4 items-center justify-center">
 			<Select
-				label="MultiSelect"
-				options={["Option 1", "Option 2", "Option 3", "Option 4"]}
+				handleSelect={(selectedItem) => {
+					console.log("selectedItems", selectedItem);
+				}}
 				multiSelect
-				onSelect={(selectedOption) =>
-					console.log("MultiSelect:", selectedOption)
-				}
-				className="max-w-[180px]"
-			/>
+			>
+				<Label>Hobbies</Label>
+				<SelectTrigger className="w-[180px]">
+					<SelectValue placeholder="Select Hobbies" />
+				</SelectTrigger>
+				<SelectContent className="w-[180px]">
+					<SelectControl />
+					<SelectItem value="coding">Coding</SelectItem>
+					<SelectItem value="lifting">Lifting</SelectItem>
+					<SelectItem value="running">Running</SelectItem>
+					<SelectItem value="soccer">Soccer</SelectItem>
+					<SelectItem value="pickleball">Pickleball</SelectItem>
+				</SelectContent>
+			</Select>
 			<Select
-				label="Select"
-				options={["Option 1", "Option 2", "Option 3"]}
-				checkmarks={false}
-				onSelect={(selectedOption) => console.log("Select:", selectedOption)}
-				className="max-w-[180px]"
-			/>
+				handleSelect={(selectedItem) => {
+					console.log("selectedItems", selectedItem);
+				}}
+			>
+				<Label>Country</Label>
+				<SelectTrigger className="w-[180px]">
+					<SelectValue placeholder="Select a Country" />
+				</SelectTrigger>
+				<SelectContent className="w-[180px]">
+					<SelectLabel>Countries</SelectLabel>
+					<SelectItem value="united states">United States</SelectItem>
+					<SelectItem value="spain">Spain</SelectItem>
+					<SelectItem value="brazil">Brazil</SelectItem>
+					<SelectItem value="portugal">Portugal</SelectItem>
+				</SelectContent>
+			</Select>
 		</main>
 	);
 }
